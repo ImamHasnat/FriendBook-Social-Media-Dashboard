@@ -1,2 +1,2 @@
 # FriendBook-Social-Media-Dashboard
-Webtech [project
+A Webtech project using Html, Css and Js
