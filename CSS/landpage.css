@@ -1,36 +1,56 @@
+/* Global Styles */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #141414;
     color: #fff;
-  }
-  
-  header {
+}
+
+/* Header Styles */
+header {
     background-color: #000;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem; /* Increased padding for bigger navbar */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Ensures logo and navbar links are separated */
     align-items: center;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
+}
+
+/* Container for Logo */
+.logo-container {
+    font-size: 2.5rem; /* Adjust logo size */
+    font-family: 'Bebas Neue', sans-serif;
     font-weight: bold;
     color: #e50914;
-  }
-  
-  nav a {
+    transform: skewY(-6deg); /* Curved effect */
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 #111; /* Depth effect */
+    letter-spacing: 2px;
+}
+
+/* Navbar links container */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: auto; /* Moves the navbar links to the right */
+}
+
+/* Navbar links */
+.nav-links a {
     margin: 0 1rem;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-  }
-  
-  nav a:hover {
+    font-size: 1.1rem; /* Slightly larger font */
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
     color: #e50914;
-  }
-  
-  .hero {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Hero Section */
+.hero {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,85 +58,194 @@ body {
     text-align: center;
     padding: 5rem 2rem;
     background-image: linear-gradient(to top, #000, #141414);
-  }
-  
-  .hero h1 {
+}
+
+.hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-  }
-  
-  .hero p {
+}
+
+.hero p {
     font-size: 1.2rem;
     max-width: 600px;
-    margin-bottom: 2rem;
-  }
-  
-  .cta-buttons a {
+    margin-bottom: 1rem;
+}
+
+.hero-features {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 1.5rem;
+}
+
+/* Get Started and Login Buttons */
+/* Hero Section CTA Buttons */
+/* Get Started and Login Buttons */
+/* Get Started and Login Buttons */
+.cta-buttons a {
     text-decoration: none;
     background-color: #e50914;
     color: #fff;
     padding: 0.75rem 1.5rem;
     margin: 0 0.5rem;
-    border-radius: 5px;
+    border-radius: 50px; /* Fully rounded corners */
     font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cta-buttons a:hover {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    outline: none; /* Remove default outline */
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    background-color: #e50914;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, border 0.3s;
+}
+
+.cta-buttons a:hover,
+.cta-buttons a:focus {
     background-color: #b00610;
-  }
-  
-  .section {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border: 2px solid #fff;
+}
+
+.cta-buttons a:focus:not(:hover) {
+    transform: none;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Features Section */
+.section {
     padding: 4rem 2rem;
     text-align: center;
-  }
-  
-  .features, .about {
+}
+
+.features, .about {
     max-width: 1000px;
     margin: auto;
-  }
-  
-  .features h2, .about h2 {
+}
+
+.features h2, .about h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #e50914;
-  }
-  
-  .feature-list {
+}
+
+.feature-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-  }
-  
-  .feature-item {
+}
+
+.feature-item {
     background-color: #1e1e1e;
     padding: 1.5rem;
     border-radius: 10px;
     width: 250px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  }
-  
-  .feature-item h3 {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.feature-item h3 {
     color: #fff;
     margin-bottom: 0.5rem;
-  }
-  
-  footer {
+}
+
+.feature-item p {
+    color: #ccc;
+}
+
+/* About Section */
+.about {
+    color: #bbb;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Footer Styles */
+footer {
     background-color: #000;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem; /* Increased padding for a better layout */
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1rem; /* Increased font size for better readability */
     color: #888;
-  }
-  
-  footer a {
+    position: relative; /* To allow positioning of the scroll-to-top button */
+}
+
+/* Footer Links */
+footer a {
     color: #888;
     text-decoration: none;
-    margin: 0 0.5rem;
-  }
-  
-  footer a:hover {
+    margin: 0 1rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
     color: #fff;
-  }
-  
+}
+
+/* Footer Container for consistency */
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Contact Information */
+.contact-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.contact-info a {
+    color: #e50914;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #fff;
+}
+
+/* Scroll to Top Button */
+.back-to-top {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #e50914;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #b00610;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.back-to-top:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff;
+    transform: translateY(-5px);
+}

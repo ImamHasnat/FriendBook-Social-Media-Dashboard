@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Friend Book</title>
-  <link rel="stylesheet" href="../CSS/landpage.css">
+  <link rel="stylesheet" href="../CSS/landpage.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <!-- Adding smooth scroll behavior -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  
+    <script src="../JS/landpage.js" defer></script>
+
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    <div class="logo">Friend Book</div>
+    <div class="logo-container">
+      <span>Friend Book</span>
+    </div>
+  
     <nav>
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#">Login</a>
-      <a href="#">Sign Up</a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
   </header>
+  
 
-  <section class="hero">
+  <!-- Hero Section -->
+<section class="hero" id="home">
     <h1>Connect. Share. Explore.</h1>
     <p>Your modern social media dashboard — inspired by your favorites, built for today.</p>
+    <br>
     <div class="cta-buttons">
-      <a href="#">Get Started</a>
-      <a href="#">Login</a>
+      <a href="#signup" class="get-started-btn">Sign Up</a>
+      <a href="#login" class="login-btn">Login</a> <!-- Added Login Button -->
     </div>
   </section>
+  
 
+  <!-- Features Section -->
   <section class="section features" id="features">
     <h2>Features</h2>
     <div class="feature-list">
@@ -50,9 +72,18 @@
         <h3>📁 Data Export</h3>
         <p>Download your activity in CSV or PDF, or schedule exports.</p>
       </div>
+      <div class="feature-item">
+        <h3>👥 Friends</h3>
+        <p>Add, remove, and interact with your friends.</p>
+      </div>
+      <div class="feature-item">
+        <h3>🔔 Notifications</h3>
+        <p>Get real-time notifications for new posts, likes, and messages.</p>
+      </div>
     </div>
   </section>
 
+  <!-- About Section -->
   <section class="section about" id="about">
     <h2>About Friend Book</h2>
     <p>
@@ -60,14 +91,32 @@
     </p>
   </section>
 
-  <footer>
-    <p>
-      <a href="#">Privacy Policy</a> | 
-      <a href="#">Terms of Service</a> | 
-      <a href="#">Help</a><br>
-      © 2025 Friend Book. All rights reserved.
-    </p>
-  </footer>
+  
 
-</body>
-</html>
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions, feel free to reach out to us through the details below:</p>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:support@friendbook.com">support@friendbook.com</a></p>
+      <p>Phone: <a href="tel:+8801234567890">+880 1234 567 890</a></p>
+    </div>
+  </section>
+
+
+
+ <!-- Footer Section -->
+<!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Friend Book. All rights reserved.</p>
+      <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank">Facebook</a> | 
+        <a href="https://www.twitter.com" target="_blank">Twitter</a> | 
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      </div>
+      <a href="#home" class="back-to-top">Back to Top</a>
+    </div>
+</footer>
+
+
