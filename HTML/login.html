@@ -13,21 +13,21 @@
     <form id="loginForm" novalidate>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" id="email" placeholder="Enter your email" />
-        <span id="emailError" class="error-message"></span>
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <small id="emailError" class="error-message"></small>
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
         <div class="password-wrapper">
-          <input type="password" id="password" placeholder="Enter your password" />
-          <span id="toggleEye" class="toggle-eye">👁️</span>
+          <input type="password" id="loginPassword" placeholder="Enter your password" required />
+          <small id="loginToggleEye" class="toggle-eye hide">👁️</small>
         </div>
-        <span id="passwordError" class="error-message"></span>
+        <small id="passwordError" class="error-message"></small>
       </div>
 
       <button type="submit">Login</button>
-
+      <a href="landpage.html" class="back-btn">Back</a>
       <div class="extra-links">
         <p><a href="resetpass.html">Forgot password?</a></p>
         <p>Don't have an account? <a href="signup.html">Sign up</a></p>
