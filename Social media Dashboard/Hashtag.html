@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hashtag Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2 id="title">Hashtag Explorer</h2>
+
+  <div class="container">
+
+    <!-- Trending Hashtags -->
+    <div class="trending-tags">
+      <h3>Trending Hashtags</h3>
+      <div class="tags">
+        <span onclick="showPosts('#Nature')">#Nature</span>
+        <span onclick="showPosts('#AI')">#AI</span>
+        <span onclick="showPosts('#Travel')">#Travel</span>
+        <span onclick="showPosts('#Food')">#Food</span>
+      </div>
+    </div>
+
+    <!-- Follow Hashtag Input -->
+    <div class="follow-bar">
+      <input type="text" id="hashtagInput" placeholder="Enter hashtag to follow">
+      <button onclick="followHashtag()">Follow</button>
+    </div>
+
+    <!-- Followed Hashtags Display -->
+    <div id="followedTags">
+      <!-- Followed tags will appear here -->
+    </div>
+
+    <!-- Related Posts -->
+    <div id="hashtagPosts" class="post-card">
+      <!-- Related posts will appear here -->
+    </div>
+
+    <!-- Volume Graph -->
+    <div id="volumeGraph" class="volume-chart">
+      <!-- Volume chart will show here -->
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activity Feed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2 id="title">Activity Feed</h2>
+
+  <div class="container">
+
+    <!-- Algorithm toggle -->
+    <div class="toggle-bar">
+      <button onclick="setFeed('recent')">Most Recent</button>
+      <button onclick="setFeed('top')">Top Posts</button>
+    </div>
+
+    <!-- Story circles -->
+    <div class="story-bar">
+      <div class="story-circle">T</div>
+      <div class="story-circle">A</div>
+      <div class="story-circle">N</div>
+      <div class="story-circle">V</div>
+      <div class="story-circle">I</div>
+    </div>
+
+    <!-- Feed area -->
+    <div id="feed" class="feed">
+      <div class="feed-post">Post 1: Hello from your friend!</div>
+      <div class="feed-post">Post 2: You liked Tanvi's update</div>
+      <div class="feed-post">Post 3: New comment on your post</div>
+    </div>
+
+    <button onclick="refreshFeed()" class="refresh-btn">Pull to Refresh</button>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
