@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="../CSS/profile.css" />
+  <script src="../JS/profile.js" defer></script>
+</head>
+<body>
+  <div class="profile-container">
+    <!-- Red Heading -->
+    <h1 class="edit-profile-title">User Profile</h1>
+
+    <!-- Back Button -->
+    <a href="feed.html" class="back-btn">Back</a>
+
+    <!-- Cover Photo Section -->
+    <div class="cover-photo-wrapper">
+      <img src="default-cover.jpg" alt="Cover Photo" id="cover-preview" class="cover-photo" />
+      <label class="upload-btn cover-upload">
+        Change Cover
+        <input type="file" id="cover-photo" accept="image/*" style="display: none;" />
+      </label>
+    </div>
+
+    <!-- Profile Form -->
+    <form class="profile-form">
+      <div class="profile-picture-wrapper">
+        <img src="default.jpg" alt="Profile Picture" id="profile-preview" class="profile-picture" />
+        <label class="upload-btn">
+          Change Photo
+          <input type="file" id="profile-photo" accept="image/*" style="display: none;" />
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter your full name" value="John Doe" />
+      </div>
+
+      <div class="form-group">
+        <label for="bio">Bio</label>
+        <textarea id="bio" placeholder="Write something about yourself...">This is my bio!</textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="theme">Theme</label>
+        <select id="theme">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</body>
+</html>
