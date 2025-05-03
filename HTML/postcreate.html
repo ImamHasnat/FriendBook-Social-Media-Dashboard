@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Creation</title>
+    <!-- Correct link to the CSS file -->
+    <link rel="stylesheet" href="../CSS/postcreate.css">
+    <script src="../JS/postcreate.js" defer></script>
+</head>
+<body>
+
+<div class="post-creation-container">
+
+    <!-- Step 1: Post Composer (Text Entry + Media Uploader) -->
+    <div id="post-composer-form" class="form-container step-form">
+        <a href="javascript:void(0);" class="back-btn" id="back-from-composer">Back</a>
+        <h2>Create Post</h2>
+        
+        <!-- Post Content (Text Entry) -->
+        <div class="form-group post-composer">
+            <textarea id="post-text" placeholder="What's on your mind?" required></textarea>
+        </div>
+        
+        <!-- Media Upload Area -->
+        <div class="form-group media-uploader" id="media-uploader">
+            <label for="media-input">Attach Photo/Video</label>
+            <input type="file" id="media-input" accept="image/*, video/*" multiple />
+            <div class="media-preview" id="media-preview"></div>
+        </div>
+
+        <!-- Tags Input (Optional) -->
+        <div class="form-group">
+            <input type="text" id="post-tags" placeholder="Tag friends/locations" />
+        </div>
+
+        <!-- Scheduled Posting -->
+        <div class="form-group">
+            <label for="schedule-time">Schedule Post</label>
+            <input type="datetime-local" id="schedule-time" />
+        </div>
+
+        <!-- Action Buttons (Next) -->
+        <div class="actions">
+            <button type="button" id="next-to-preview">Next</button>
+        </div>
+    </div>
+
+    <!-- Step 2: Post Preview (Only preview - no media upload here) -->
+    <div id="post-preview-form" class="form-container step-form" style="display: none;">
+        <a href="javascript:void(0);" class="back-btn" id="back-from-preview">Back</a>
+        <h2>Preview Your Post</h2>
+        
+        <!-- Post Preview -->
+        <div class="post-preview">
+            <div class="post-text">
+                <p id="preview-text">This is your post text content.</p>
+            </div>
+
+            <div class="post-media" id="preview-media">
+                <!-- Media will be dynamically added here -->
+            </div>
+
+            <div class="tags">
+                <span id="preview-tags">#Friend1 #Travel</span>
+            </div>
+
+            <div class="schedule-info">
+                <p>Scheduled for: <span id="schedule-time-preview">May 5, 2025, 12:00 PM</span></p>
+            </div>
+
+            <!-- Action Buttons (Post, Edit) -->
+            <div class="actions">
+                <button type="button" id="edit-post-btn">Edit</button>
+                <button type="button" id="confirm-post-btn">Post Now</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
