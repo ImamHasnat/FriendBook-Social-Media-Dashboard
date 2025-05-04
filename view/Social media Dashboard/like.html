@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Like & Comment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2 id="title">Like & Comment</h2>
+  <div class="container">
+    
+    <div class="post-card">
+    </div> <!-- post-card -->
+
+    
+
+      <p>This is a sample post by a friend!</p>
+      <div class="reaction-bar">
+        <button onclick="react('like')">👍 Like</button>
+        <button onclick="react('love')">❤️ Love</button>
+        <button onclick="react('haha')">😂 Haha</button>
+      </div>
+
+      <div class="comment-section">
+        <input type="text" id="commentInput" placeholder="Write a comment...">
+        <button onclick="postComment()">Post</button>
+
+        <div id="commentsList">
+          <!-- Comments will appear here -->
+        </div> <!-- post-card -->
+
+        <a href="ActivityFeed.html" class="box-btn">← Back to Activity Feed</a>
+    
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
