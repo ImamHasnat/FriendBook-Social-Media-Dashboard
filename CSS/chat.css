@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #1e1e1e;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #111;
+    border-right: 1px solid #333;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #e50914;
+}
+
+#chat-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.chat {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #222;
+    transition: background-color 0.3s ease;
+}
+
+.chat:hover, .chat.active {
+    background-color: #333;
+}
+
+.chat-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    padding: 1rem;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #181818;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background-color: #e50914;
+    color: white;
+}
+
+.chat-footer {
+    padding: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+}
+
+#message-input {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 1rem;
+}
+
+#message-input:focus {
+    outline: none;
+    background-color: #333;
+}
+
+#send-btn, #media-btn {
+    padding: 0.75rem 1rem;
+    background-color: #e50914;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#send-btn:hover, #media-btn:hover {
+    background-color: #b00610;
+}
+
+/* For Default Text */
+.default-text {
+    color: rgb(24, 247, 255); /* Make the default text red */
+}

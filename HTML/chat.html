@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat Interface</title>
+  <link rel="stylesheet" href="../CSS/chat.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <div class="sidebar">
+      <h2>Chats</h2>
+      <ul id="chat-list">
+        <li class="chat active" data-chat="webtech-group">Webtech group</li>
+        <li class="chat" data-chat="spider-man">Spider man</li>
+        <li class="chat" data-chat="alamin-sir">Alamin sir</li>
+        <li class="chat" data-chat="groupmate">Groupmate</li>
+      </ul>
+    </div>
+
+    <div class="chat-window">
+      <div class="chat-header">
+        <!-- Back Button -->
+        <button id="back-btn">Back</button>
+        <h3 id="chat-title">Webtech group</h3>
+      </div>
+
+      <div class="chat-body" id="chat-body">
+        <!-- Default Message will appear here based on chat selected -->
+        <p class="default-text">Welcome, Let's discuss Webtech topics.</p>
+      </div>
+
+      <div class="chat-footer">
+        <input type="file" id="media-input" accept="image/*,audio/*" hidden />
+        <button id="media-btn">📎</button>
+        <input type="text" id="message-input" placeholder="Type a message..." />
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../JS/chat.js"></script>
+</body>
+</html>
