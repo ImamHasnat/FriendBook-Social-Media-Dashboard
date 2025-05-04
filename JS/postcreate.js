@@ -12,10 +12,11 @@ const postPreviewForm = document.getElementById('post-preview-form');
 const mediaInput = document.getElementById('media-input');
 const mediaPreview = document.getElementById('media-preview');
 
-// Post Text Input
+// Input Fields
 const postText = document.getElementById('post-text');
 const postTags = document.getElementById('post-tags');
 const scheduleTimeInput = document.getElementById('schedule-time');
+const privacySetting = document.getElementById('privacy-setting'); // NEW
 
 // Handle next button from Post Composer to Post Preview
 nextToPreviewBtn.addEventListener('click', () => {
@@ -39,6 +40,11 @@ nextToPreviewBtn.addEventListener('click', () => {
     const tagsPreview = document.getElementById('preview-tags');
     tagsPreview.textContent = postTags.value ? `#${postTags.value.split(' ').join(' #')}` : '';
 
+    // Update privacy info
+    const privacy = privacySetting.value;
+    const privacyInfo = document.getElementById('privacy-setting-preview');
+    privacyInfo.textContent = `Privacy: ${capitalizeFirstLetter(privacy)}`;
+
     // Handle media preview (image or video)
     const mediaPreviewContainer = document.getElementById('preview-media');
     const files = mediaInput.files;
@@ -49,9 +55,11 @@ nextToPreviewBtn.addEventListener('click', () => {
             `<video src="${fileURL}" controls></video>` :
             `<img src="${fileURL}" alt="Preview Media" />`;
         mediaPreviewContainer.innerHTML = mediaElement;
+    } else {
+        mediaPreviewContainer.innerHTML = '';
     }
 
-    // Hide Post Composer and show Post Preview
+    // Transition to Post Preview
     postComposerForm.style.display = 'none';
     postPreviewForm.style.display = 'block';
 });
@@ -64,7 +72,7 @@ backFromPreviewBtn.addEventListener('click', () => {
 
 // Back button functionality from Post Composer to Activity Feed (or whatever page)
 backFromComposerBtn.addEventListener('click', () => {
-    window.location.href = 'activityfeed.html'; // Or any other URL to navigate
+    window.location.href = 'activityfeed.html'; // Replace with correct path if needed
 });
 
 // Handle file input (media preview)
@@ -89,3 +97,8 @@ editPostBtn.addEventListener('click', () => {
     postPreviewForm.style.display = 'none';
     postComposerForm.style.display = 'block';
 });
+
+// Helper function to capitalize first letter
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
