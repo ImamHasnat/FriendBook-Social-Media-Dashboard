@@ -127,5 +127,23 @@ body {
 
 /* For Default Text */
 .default-text {
-    color: rgb(24, 247, 255); /* Make the default text red */
+    color: rgb(24, 247, 255); /* Light blue color */
+    font-weight: bold;        /* Makes the text bold */
+    font-size: 1.2rem;        /* Increases the font size (you can adjust as needed) */
 }
+
+.back-btn {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    color: #e50914;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .back-btn:hover {
+    color: #b00610;
+    transform: scale(1.1);
+  }
