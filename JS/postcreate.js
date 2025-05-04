@@ -72,7 +72,7 @@ backFromPreviewBtn.addEventListener('click', () => {
 
 // Back button functionality from Post Composer to Activity Feed (or whatever page)
 backFromComposerBtn.addEventListener('click', () => {
-    window.location.href = 'activityfeed.html'; // Replace with correct path if needed
+    window.location.href = 'feed.html'; // Replace with correct path if needed
 });
 
 // Handle file input (media preview)

@@ -1,4 +1,3 @@
-// Function to validate the login form
 function validateLoginForm() {
     let isValid = true;
 
@@ -31,6 +30,26 @@ function validateLoginForm() {
 
     return isValid;
 }
+
+if (loginForm) {
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // prevent submission first
+
+        const isValid = validateLoginForm();
+
+        if (isValid) {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('loginPassword').value;
+
+            if (email === "i@gmail.com" && password === "123456@") {
+                window.location.href = "feed.html";
+            } else {
+                document.getElementById('passwordError').textContent = 'Invalid email or password.';
+            }
+        }
+    });
+}
+
 
 // Function to validate the signup form
 function validateSignUpForm() {

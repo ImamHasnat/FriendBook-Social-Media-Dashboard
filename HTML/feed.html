@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Friend Book - Activity Feed</title>
+  <link rel="stylesheet" href="../CSS/feed.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <h1 class="logo">FriendBook</h1>
+    <nav class="nav-links">
+      <button onclick="goTo('profile.html')">Profile</button>
+      <button onclick="goTo('postcreate.html')">Create Post</button>
+      <button onclick="goTo('settings.html')">Settings</button>
+      <button onclick="goTo('landpage.html')">Logout</button>
+    </nav>
+  </header>
+
+  <main class="feed-container">
+    <!-- Story Circles -->
+    <section class="stories">
+      <div class="story">Your Story</div>
+      <div class="story">Alamin</div>
+      <div class="story">Spider</div>
+      <div class="story">Groupmate</div>
+    </section>
+
+    <!-- Toggle Algorithm -->
+    <div class="toggle-bar">
+      <label>
+        <input type="checkbox" id="algo-toggle" />
+        Toggle Algorithm (Chrono / Popular)
+      </label>
+    </div>
+
+    <!-- Posts Feed -->
+    <section class="posts">
+      <div class="post">
+        <h3>Alamin Sir</h3>
+        <p>New marks uploaded in WebTech! 🎉</p>
+      </div>
+
+      <div class="post">
+        <h3>Spider Man</h3>
+        <img src="spidey.jpg" alt="Spider" />
+        <p>Just saved the city again 🕸️</p>
+      </div>
+
+      <div class="post">
+        <h3>Groupmate</h3>
+        <p>Bhai, kal ke project presentation ready!</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../JS/feed.js"></script>
+
+</body>
+</html>
