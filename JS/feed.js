@@ -1,50 +1,65 @@
-// Navigation helper
+document.addEventListener('DOMContentLoaded', function () {
+    const posts = [
+        { username: "Alamin Sir", content: "New marks uploaded in WebTech! 🎉" },
+        { username: "Spider Man", content: "Just saved the city again 🕸️", image: "spidey.jpg" },
+        { username: "Groupmate", content: "Bhai, kal ke project presentation ready!" }
+    ];
+
+    const stories = [
+        "Your Story",
+        "Alamin",
+        "Spider",
+        "Groupmate"
+    ];
+
+    const postsContainer = document.querySelector('.posts');
+    const storiesContainer = document.querySelector('.stories');
+
+    // Dynamically add stories
+    stories.forEach(story => {
+        const storyElement = document.createElement('div');
+        storyElement.classList.add('story');
+        storyElement.textContent = story;
+        storiesContainer.appendChild(storyElement);
+    });
+
+    // Dynamically add posts
+    posts.forEach(post => {
+        const postElement = document.createElement('div');
+        postElement.classList.add('post');
+
+        const postHeader = document.createElement('h3');
+        postHeader.textContent = post.username;
+        postElement.appendChild(postHeader);
+
+        if (post.image) {
+            const postImage = document.createElement('img');
+            postImage.src = post.image;
+            postImage.alt = post.username;
+            postElement.appendChild(postImage);
+        }
+
+        const postContent = document.createElement('p');
+        postContent.textContent = post.content;
+        postElement.appendChild(postContent);
+
+        postsContainer.appendChild(postElement);
+    });
+
+    // Toggle Algorithm functionality
+    document.getElementById('algo-toggle').addEventListener('change', function () {
+        // Here you can add functionality to switch between Chrono and Popular algorithms
+        if (this.checked) {
+            console.log("Popular algorithm selected");
+            // Sort posts by popular algorithm (you can implement sorting logic here)
+        } else {
+            console.log("Chronological algorithm selected");
+            // Sort posts chronologically (you can implement sorting logic here)
+        }
+    });
+});
+
+// Function to redirect to pages
 function goTo(page) {
     window.location.href = page;
-  }
-  
-  // Algorithm toggle
-  const algoToggle = document.getElementById('algo-toggle');
-  algoToggle.addEventListener('change', function () {
-    const mode = this.checked ? "Popular" : "Chronological";
-    alert(`${mode} mode enabled!`);
-    // You can later replace this with actual sorting logic
-  });
-  
-  // Example: dynamic post addition (simulate new post every 10s)
-  const postsContainer = document.querySelector('.posts');
-  
-  function addPost(author, content, img = null) {
-    const post = document.createElement('div');
-    post.classList.add('post');
-  
-    let postHTML = `<h3>${author}</h3>`;
-    if (img) {
-      postHTML += `<img src="${img}" alt="${author}'s post image" />`;
-    }
-    postHTML += `<p>${content}</p>`;
-  
-    post.innerHTML = postHTML;
-    postsContainer.prepend(post); // Add to top (latest first)
-  }
-  
-  // Simulate post every 10 seconds
-  setInterval(() => {
-    const samplePosts = [
-      { author: 'Ratul', content: 'Just finished our FriendBook feature!', img: null },
-      { author: 'Nadim', content: 'Dark theme vibes 🔥', img: 'https://via.placeholder.com/300' },
-      { author: 'Toma', content: 'Project presentation today 😰', img: null },
-    ];
-    const randomPost = samplePosts[Math.floor(Math.random() * samplePosts.length)];
-    addPost(randomPost.author, randomPost.content, randomPost.img);
-  }, 10000);
-  
-  // Handle story click
-  const stories = document.querySelectorAll('.story');
-  stories.forEach(story => {
-    story.addEventListener('click', () => {
-      alert(`Viewing story from: ${story.textContent}`);
-      // You can expand this into a modal story viewer later
-    });
-  });
-  
+}
