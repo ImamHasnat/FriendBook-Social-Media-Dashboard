@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activity Feed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2 id="title">Activity Feed</h2>
+
+  <div class="container">
+    <!-- Top Navigation Buttons -->
+    <div class="top-button-bar">
+      <a href="Notification.html" class="box-btn">🔔 Notifications</a>
+
+      <div class="dropdown-box">
+        <span class="box-btn">👤 Profile ▼</span>
+        <div class="dropdown-content">
+          <a href="ProfileManagement.html">View Profile</a>
+          <a href="#">Edit Profile</a>
+          <a href="#" onclick="logout()">Logout</a>
+        </div>
+      </div>
+
+      <div class="dropdown-box">
+        <span class="box-btn">⚙️ Settings ▼</span>
+        <div class="dropdown-content">
+          <a href="ContactUs.html">Contact Us</a>
+        </div>
+      </div>
+
+      <a href="friendConnection.html" class="box-btn">🤝 Friend Connection</a>
+      <a href="HashTag.html" class="box-btn">#️⃣ Hashtag Explorer</a>
+
+    </div>
+
+    <!-- Toggle feed buttons -->
+    <div class="toggle-bar">
+      <button onclick="setFeed('recent')">Most Recent</button>
+      <button onclick="setFeed('top')">Top Posts</button>
+    </div>
+
+    <!-- Story bar -->
+    <div class="story-bar">
+      <div class="story-circle" onclick="viewStory('Tanvi')">T</div>
+      <div class="story-circle" onclick="viewStory('Ani')">A</div>
+      <div class="story-circle" onclick="viewStory('Nabila')">N</div>
+      <div class="story-circle" onclick="viewStory('Vanya')">V</div>
+      <div class="story-circle" onclick="viewStory('Ishita')">I</div>
+      <button class="upload-btn" onclick="uploadStory()">+ Upload Story</button>
+    </div>
+
+    <!-- Say something input -->
+    <div class="post-box">
+      <textarea placeholder="Say something..."></textarea>
+      <button class="upload-btn">Upload</button>
+    </div>
+
+    <!-- Feed section -->
+    <div id="feed" class="feed">
+      <div class="feed-post">Post 1: Hello from your friend!<br>
+        <a href="like.html" class="feed-btn">Like</a>
+        <a href="like.html" class="feed-btn">Comment</a>
+      </div>
+      <div class="feed-post">Post 2: You liked Tanvi's update<br>
+        <a href="like.html" class="feed-btn">Like</a>
+        <a href="like.html" class="feed-btn">Comment</a>
+      </div>
+      <div class="feed-post">Post 3: New comment on your post<br>
+        <a href="like.html" class="feed-btn">Like</a>
+        <a href="like.html" class="feed-btn">Comment</a>
+      </div>
+    </div>
+
+    <button onclick="refreshFeed()" class="refresh-btn">Pull to Refresh</button>
+    <p id="message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
