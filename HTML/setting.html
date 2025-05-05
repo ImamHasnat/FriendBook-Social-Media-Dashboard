@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Friend Book - Settings</title>
+  <link rel="stylesheet" href="../CSS/setting.css" />
+</head>
+<body>
+  <a href="#" class="back-btn">Back</a>
+  
+  <div class="settings-container">
+    <div class="settings-header">
+      <h2>Settings</h2>
+    </div>
+    
+    <div class="settings-layout">
+      <!-- Settings Navigation Sidebar -->
+      <aside class="settings-sidebar">
+        <ul class="settings-nav">
+          <li class="nav-item active" data-target="account">Account</li>
+          <li class="nav-item" data-target="profile">Profile</li>
+          <li class="nav-item" data-target="privacy">Privacy & Security</li>
+          <li class="nav-item" data-target="data">Data & Personalization</li>
+          <li class="nav-item" data-target="notifications">Notifications</li>
+          <li class="nav-item" data-target="chat">Chat Settings</li>
+          <li class="nav-item" data-target="appearance">Appearance</li>
+          <li class="nav-item" data-target="experimental">Experimental</li>
+          <li class="nav-item" data-target="help">Help & Legal</li>
+        </ul>
+      </aside>
+      
+      <!-- Settings Content Area -->
+      <main class="settings-content">
+        <!-- Account Settings -->
+        <section id="account" class="settings-section active">
+          <h3>Account Settings</h3>
+          
+          <div class="settings-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" value="user@example.com" />
+          </div>
+          
+          <div class="settings-group">
+            <label for="password">Change Password</label>
+            <input type="password" id="password" placeholder="New password" />
+          </div>
+          
+          <div class="toggle-switch">
+            <label>Two-Factor Authentication</label>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </div>
+          
+          <div class="settings-group">
+            <h4>Login Activity</h4>
+            <div class="login-activity">
+              <div class="activity-item">
+                <div class="device-info">
+                  <span class="device-name">iPhone 15 Pro</span>
+                  <span class="location">San Francisco, CA</span>
+                </div>
+                <span class="timestamp">Today, 2:34 PM</span>
+              </div>
+              <div class="activity-item">
+                <div class="device-info">
+                  <span class="device-name">Windows PC</span>
+                  <span class="location">San Francisco, CA</span>
+                </div>
+                <span class="timestamp">Yesterday, 8:12 AM</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="danger-zone">
+            <h4>Danger Zone</h4>
+            <div class="danger-buttons">
+              <button class="btn-danger">Deactivate Account</button>
+              <button class="btn-danger">Delete Account</button>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Profile Settings -->
+        <section id="profile" class="settings-section">
+          <h3>Profile Settings</h3>
+          
+          <div class="profile-photos">
+            <div class="profile-picture">
+              <img src="/api/placeholder/120/120" alt="Profile Picture" />
+              <button class="change-photo">Change Profile Picture</button>
+            </div>
+            <div class="cover-photo">
+              <img src="/api/placeholder/500/120" alt="Cover Photo" />
+              <button class="change-photo">Change Cover Photo</button>
+            </div>
+          </div>
+          
+          <div class="settings-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" value="John Doe" />
+          </div>
+          
+          <div class="settings-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" value="johndoe" />
+          </div>
+          
+          <div class="settings-group">
+            <label for="bio">Bio</label>
+            <textarea id="bio" rows="3">Just a friendly person who loves technology and hiking!</textarea>
+          </div>
+          
+          <div class="settings-group">
+            <label for="featured">Featured Content</label>
+            <select id="featured">
+              <option>Most recent posts</option>
+              <option>Pinned posts only</option>
+              <option>Photos and videos</option>
+              <option>Custom selection</option>
+            </select>
+          </div>
+        </section>
+        
+        <!-- Privacy & Security -->
+        <section id="privacy" class="settings-section">
+          <h3>Privacy & Security</h3>
+          
+          <div class="settings-group">
+            <label for="profile-visibility">Who can view your profile?</label>
+            <select id="profile-visibility">
+              <option>Public</option>
+              <option>Friends Only</option>
+              <option>Private</option>
+            </select>
+          </div>
+          
+          <div class="settings-group">
+            <label for="post-visibility">Who can see your posts?</label>
+            <select id="post-visibility">
+              <option>Public</option>
+              <option>Friends Only</option>
+              <option>Private</option>
+            </select>
+          </div>
+          
+          <div class="settings-group">
+            <label for="story-visibility">Who can see your stories?</label>
+            <select id="story-visibility">
+              <option>Everyone</option>
+              <option>Friends Only</option>
+              <option>Close Friends</option>
+            </select>
+          </div>
+          
+          <div class="settings-group">
+            <h4>Blocked Users</h4>
+            <div class="blocked-list">
+              <div class="blocked-user">
+                <span>Alex Smith</span>
+                <button class="unblock-btn">Unblock</button>
+              </div>
+              <div class="blocked-user">
+                <span>Jamie Wilson</span>
+                <button class="unblock-btn">Unblock</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="settings-group">
+            <h4>Muted Accounts</h4>
+            <div class="muted-list">
+              <div class="muted-user">
+                <span>Chris Johnson</span>
+                <button class="unmute-btn">Unmute</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Data & Personalization -->
+        <section id="data" class="settings-section">
+          <h3>Data & Personalization</h3>
+          
+          <div class="settings-group">
+            <h4>Export Your Data</h4>
+            <p class="settings-info">Download a copy of your Friend Book data</p>
+            <div class="export-options">
+              <button class="btn-secondary">Export as PDF</button>
+              <button class="btn-secondary">Export as CSV</button>
+            </div>
+          </div>
+          
+          <div class="toggle-switch">
+            <label>Use Chronological Feed</label>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </div>
+          
+          <div class="settings-group">
+            <h4>Ad Preferences</h4>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="ads-personalized" name="ads" checked>
+                <label for="ads-personalized">Personalized Ads</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="ads-generic" name="ads">
+                <label for="ads-generic">Generic Ads</label>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Notification Settings -->
+        <section id="notifications" class="settings-section">
+          <h3>Notification Settings</h3>
+          
+          <div class="toggle-switch">
+            <label>Push Notifications</label>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          
+          <div class="toggle-switch">
+            <label>Email Notifications</label>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          
+          <div class="settings-group">
+            <h4>Customize Notifications</h4>
+            
+            <div class="checkbox-group">
+              <input type="checkbox" id="notify-likes" checked>
+              <label for="notify-likes">Likes</label>
+            </div>
+            
+            <div class="checkbox-group">
+              <input type="checkbox" id="notify-comments" checked>
+              <label for="notify-comments">Comments</label>
+            </div>
+            
+            <div class="checkbox-group">
+              <input type="checkbox" id="notify-mentions" checked>
+              <label for="notify-mentions">Mentions</label>
+            </div>
+            
+            <div class="checkbox-group">
+              <input type="checkbox" id="notify-messages" checked>
+              <label for="notify-messages">Messages</label>
+            </div>
+            
+            <div class="checkbox-group">
+              <input type="checkbox" id="notify-follows">
+              <label for="notify-follows">New Followers</label>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Chat Settings -->
+        <section id="chat" class="settings-section">
+          <h3>Chat Settings</h3>
+          
+          <div class="toggle-switch">
+            <label>Enable Voice Messages</label>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          
+          <div class="toggle-switch">
+            <label>Auto-download Media</label>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          
+          <div class="settings-group">
+            <label for="group-notifications">Group Chat Notifications</label>
+            <select id="group-notifications">
+              <option>All Messages</option>
+              <option>Only @Mentions</option>
+              <option>Nothing</option>
+            </select>
+          </div>
+          
+          <div class="settings-group">
+            <h4>Active Chat Sessions</h4>
+            <div class="chat-sessions">
+              <div class="chat-session">
+                <span>Group: Weekend Plans</span>
+                <button class="exit-btn">Exit Group</button>
+              </div>
+              <div class="chat-session">
+                <span>Sarah's Birthday Planning</span>
+                <button class="exit-btn">Exit Group</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Appearance -->
+        <section id="appearance" class="settings-section">
+          <h3>Appearance</h3>
+          
+          <div class="toggle-switch">
+            <label>Dark Mode</label>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          
+          <div class="settings-group">
+            <label for="font-size">Font Size</label>
+            <select id="font-size">
+              <option>Small</option>
+              <option selected>Medium</option>
+              <option>Large</option>
+              <option>Extra Large</option>
+            </select>
+          </div>
+          
+          <div class="settings-group">
+            <label for="story-style">Story Circles Style</label>
+            <select id="story-style">
+              <option>Classic</option>
+              <option>Large Preview</option>
+              <option>Minimal</option>
+            </select>
+          </div>
+        </section>
+        
+        <!-- Experimental Features -->
+        <section id="experimental" class="settings-section">
+          <h3>Experimental Features</h3>
+          
+          <div class="toggle-switch">
+            <label>Beta Access</label>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </div>
+          
+          <div class="settings-group">
+            <h4>Feedback</h4>
+            <p class="settings-info">Help us improve Friend Book by sharing your thoughts</p>
+            <button class="btn-secondary">Submit Feedback</button>
+          </div>
+          
+          <div class="settings-group">
+            <h4>Bug Report</h4>
+            <p class="settings-info">Found something not working correctly?</p>
+            <button class="btn-secondary">Report a Bug</button>
+          </div>
+        </section>
+        
+        <!-- Help & Legal -->
+        <section id="help" class="settings-section">
+          <h3>Help & Legal</h3>
+          
+          <div class="settings-group">
+            <h4>Support</h4>
+            <a href="#" class="support-link">Contact Support</a>
+            <a href="#" class="support-link">Help Center</a>
+            <a href="#" class="support-link">FAQ</a>
+          </div>
+          
+          <div class="settings-group">
+            <h4>Legal</h4>
+            <a href="#" class="support-link">Terms of Service</a>
+            <a href="#" class="support-link">Privacy Policy</a>
+            <a href="#" class="support-link">Community Guidelines</a>
+          </div>
+        </section>
+      </main>
+    </div>
+    
+    <div class="settings-footer">
+      <div class="btn-group">
+        <button class="btn-primary">Save Changes</button>
+        <button class="btn-secondary">Cancel</button>
+      </div>
+      <button class="logout-btn">Log Out</button>
+      <p class="copyright">© 2025 Friend Book. All rights reserved.</p>
+    </div>
+  </div>
+  
+ 
+</body>
+</html>

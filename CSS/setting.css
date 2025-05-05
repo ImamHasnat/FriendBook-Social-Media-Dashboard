@@ -1,0 +1,565 @@
+/* Reset & Global */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+  }
+  
+  /* Back Button */
+  .back-btn {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    color: #e50914;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .back-btn:hover {
+    color: #b00610;
+    transform: scale(1.1);
+  }
+  
+  /* Settings Container */
+  .settings-container {
+    background-color: #000;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    overflow: hidden;
+  }
+  
+  /* Settings Header */
+  .settings-header {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+  
+  .settings-header h2 {
+    font-size: 2rem;
+    color: #e50914;
+    font-weight: bold;
+  }
+  
+  /* Settings Layout - Grid Structure */
+  .settings-layout {
+    display: flex;
+    min-height: 500px;
+  }
+  
+  /* Settings Sidebar */
+  .settings-sidebar {
+    width: 220px;
+    background-color: #0a0a0a;
+    padding: 1.5rem 0;
+    border-right: 1px solid #333;
+  }
+  
+  .settings-nav {
+    list-style: none;
+  }
+  
+  .nav-item {
+    padding: 0.8rem 1.5rem;
+    color: #b3b3b3;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: 500;
+  }
+  
+  .nav-item:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  .nav-item.active {
+    background-color: #e50914;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Settings Content Area */
+  .settings-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  /* Settings Sections */
+  .settings-section {
+    display: none;
+  }
+  
+  .settings-section.active {
+    display: block;
+  }
+  
+  .settings-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #e50914;
+    font-weight: bold;
+  }
+  
+  .settings-section h4 {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.8rem;
+    color: #fff;
+  }
+  
+  .settings-info {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Form Elements */
+  .settings-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    font-size: 1rem;
+    color: #b3b3b3;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    background-color: #2a2a2a;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  /* Toggle Switches */
+  .toggle-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border-radius: 24px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #e50914;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  /* Radio Buttons */
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .radio-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+  }
+  
+  .radio-option label {
+    margin-bottom: 0;
+  }
+  
+  /* Checkbox Styling */
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.8rem;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .checkbox-group label {
+    margin-bottom: 0;
+  }
+  
+  /* Button Styles */
+  .btn-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+  
+  .btn-primary {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1;
+    max-width: 200px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-secondary {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1;
+    max-width: 200px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #b00610;
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+  }
+  
+  /* Danger Zone */
+  .danger-zone {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #e50914;
+    border-radius: 5px;
+    background-color: rgba(229, 9, 20, 0.1);
+  }
+  
+  .danger-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .btn-danger {
+    background-color: transparent;
+    color: #e50914;
+    border: 1px solid #e50914;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: rgba(229, 9, 20, 0.2);
+  }
+  
+  /* Profile Photos */
+  .profile-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e50914;
+  }
+  
+  .cover-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .cover-photo img {
+    width: 100%;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .change-photo {
+    background-color: transparent;
+    color: #e50914;
+    border: 1px solid #e50914;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .change-photo:hover {
+    background-color: rgba(229, 9, 20, 0.1);
+  }
+  
+  /* Lists (Blocked, Muted, Login Activity) */
+  .blocked-list,
+  .muted-list,
+  .login-activity,
+  .chat-sessions {
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .blocked-user,
+  .muted-user,
+  .activity-item,
+  .chat-session {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #333;
+  }
+  
+  .blocked-user:last-child,
+  .muted-user:last-child,
+  .activity-item:last-child,
+  .chat-session:last-child {
+    border-bottom: none;
+  }
+  
+  .device-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .device-name {
+    font-weight: 500;
+  }
+  
+  .location,
+  .timestamp {
+    font-size: 0.8rem;
+    color: #999;
+  }
+  
+  .unblock-btn,
+  .unmute-btn,
+  .exit-btn {
+    background-color: transparent;
+    color: #e50914;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .unblock-btn:hover,
+  .unmute-btn:hover,
+  .exit-btn:hover {
+    color: #b00610;
+    text-decoration: underline;
+  }
+  
+  /* Export Options */
+  .export-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .export-options .btn-secondary {
+    max-width: none;
+  }
+  
+  /* Support Links */
+  .support-link {
+    display: block;
+    color: #b3b3b3;
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+  }
+  
+  .support-link:hover {
+    color: #e50914;
+  }
+  
+  /* Settings Footer */
+  .settings-footer {
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid #333;
+  }
+  
+  .logout-btn {
+    background-color: transparent;
+    border: 1px solid #e50914;
+    color: #e50914;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 1.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background-color: rgba(229, 9, 20, 0.1);
+  }
+  
+  .copyright {
+    font-size: 0.8rem;
+    color: #737373;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+    
+    .back-btn {
+      top: 15px;
+      left: 15px;
+    }
+    
+    .settings-layout {
+      flex-direction: column;
+    }
+    
+    .settings-sidebar {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #333;
+      padding: 0.5rem 0;
+    }
+    
+    .settings-nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .nav-item {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .settings-content {
+      padding: 1.5rem;
+    }
+    
+    .btn-group {
+      flex-direction: column;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+      max-width: none;
+    }
+    
+    .danger-buttons {
+      flex-direction: column;
+    }
+    
+    .export-options {
+      flex-direction: column;
+    }
+  }
