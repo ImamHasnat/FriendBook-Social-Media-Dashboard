@@ -19,17 +19,9 @@
       </form>
       <a href="#" onclick="showForm('forgotForm')">Forgot Password?</a><br><br>
       <hr style="width: 200px; margin: 10px auto;">
-      <button onclick="showForm('signupForm')">Go to Signup</button>
-      <br>
-      <a href="Register.html">Register</a>
-    </div>
-
-    <!-- Signup Form -->
-    <div id="signupForm" class="form-container">
-      <input type="text" id="signupEmail" placeholder="Email"><br>
-      <input type="password" id="signupPassword" placeholder="Password"><br>
-      <button onclick="signup()">Signup</button><br>
-      <button onclick="showForm('loginForm')">Go to Login</button>
+      <form action="Register.html">
+        <button type="submit">Register</button>
+      </form>
     </div>
 
     <!-- Forgot Password Form -->

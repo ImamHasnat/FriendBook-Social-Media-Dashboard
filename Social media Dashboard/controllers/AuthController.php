@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once('../models/userModel.php');
+
 
 function loginHandler() {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -7,7 +9,8 @@ function loginHandler() {
         $password = $_POST['password'] ?? '';
         $user = ['username' => $username, 'password' => $password];
         if (login($user)) {
-            header('Location: ../views/ProfileManagement.html');
+            $_SESSION['username'] = $username;
+            header('Location: ../views/ProfileManagement.php');
             exit();
         } else {
             echo "<script>alert('Invalid username or password!'); window.location.href='../views/FormValidation.html';</script>";

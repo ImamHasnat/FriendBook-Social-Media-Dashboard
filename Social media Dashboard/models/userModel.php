@@ -67,4 +67,25 @@ function getUserByUsername($username){
     return false;
 }
 
+//Upadate user password
+function updateUserPassword($username, $newPassword){
+    $con = getConnection();
+    $sql = "UPDATE users SET password='" . mysqli_real_escape_string($con, $newPassword) . "' WHERE username='" . mysqli_real_escape_string($con, $username) . "'";
+    return mysqli_query($con, $sql);
+}
+
+function updateUserProfile($username, $newName, $newEmail) {
+    $con = getConnection();
+    $sql = "UPDATE users SET username='" . mysqli_real_escape_string($con, $newName) . "', email='" . mysqli_real_escape_string($con, $newEmail) . "' WHERE username='" . mysqli_real_escape_string($con, $username) . "'";
+    $result = mysqli_query($con, $sql);
+    if ($result) {
+        // Update session username if changed
+        if ($username !== $newName) {
+            $_SESSION['username'] = $newName;
+        }
+        return true;
+    }
+    return false;
+}
+
 ?>
